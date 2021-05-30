@@ -72,9 +72,7 @@ namespace ClinincManagementSystemProject.Controllers
         }
         public IActionResult Logout()
         {
-
-            HttpContext.Session.Clear();
-            return RedirectToAction("Login", "Home");
+            return RedirectToAction("Login", "UserLogin");
         }
         public IActionResult Welcome()
         {

@@ -6,17 +6,22 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using ClinincManagementSystemProject.Models;
-
+using ClinincManagementSystemProject.Services;
+using Microsoft.Extensions.Logging;
 
 namespace ClinincManagementSystemProject.Controllers
 {
     public class AppointmentsController : Controller
     {
         private readonly ClinicContext _context;
+        private readonly IClinic<Appointment> _repo;
+        private readonly ILogger<AppointmentsController> _logger;
 
-        public AppointmentsController(ClinicContext context)
+        public AppointmentsController(ClinicContext context, IClinic<Appointment> repo, ILogger<AppointmentsController> logger)
         {
             _context = context;
+            _repo = repo;
+            _logger = logger;
         }
 
         // GET: Appointments
@@ -63,39 +68,15 @@ namespace ClinincManagementSystemProject.Controllers
         {
             if (ModelState.IsValid)
             {
-
                 _context.Add(appointment);
                 await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return RedirectToAction("DetailsOfAppointment");
             }
-
-            
-            //string s = Convert.ToString(res);
-            //switch (s)
-            //{
-            //    case "General":
-            //        ViewData["DoctorID"] = new SelectList(_context.Doctors, "DoctorId", "FirstName", appointment.DoctorID);
-            //        break;
-            //    case "Internal Medicine":
-            //        ViewData["DoctorID"] = new SelectList(_context.Doctors, "DoctorId", "FirstName", appointment.DoctorID);
-            //        break;
-            //    case "Pediatrics":
-            //        ViewData["DoctorID"] = new SelectList(_context.Doctors, "DoctorId", "FirstName", appointment.DoctorID);
-            //        break;
-            //    case " Orthopedics":
-            //        ViewData["DoctorID"] = new SelectList(_context.Doctors, "DoctorId", "FirstName", appointment.DoctorID);
-            //        break;
-            //    case "Ophthalmology":
-            //        ViewData["DoctorID"] = new SelectList(_context.Doctors, "DoctorId", "FirstName", appointment.DoctorID);
-            //        break;
-            //    default:
-            //        break;
-            //}
             ViewData["DoctorID"] = new SelectList(_context.Doctors, "DoctorId", "FirstName", appointment.DoctorID);
             ViewData["PatientID"] = new SelectList(_context.Patients, "PatientId", "FirstName", appointment.PatientID);
             return View(appointment);
         }
-
+       
         // GET: Appointments/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
@@ -150,6 +131,34 @@ namespace ClinincManagementSystemProject.Controllers
             ViewData["PatientID"] = new SelectList(_context.Patients, "PatientId", "FirstName", appointment.PatientID);
             return View(appointment);
         }
+        [HttpGet]
+        public IActionResult DetailsOfAppointment()
+        {
+            try
+            {
+                var check = _context.Appointments.OrderBy(x => x.DoctorAvailability).FirstOrDefault();
+                string checkVariable = Convert.ToString(check.DoctorAvailability);
+                string s = "Yes";
+                
+                if (checkVariable == s)
+                {
+                    var res = _context.Appointments.OrderBy(x => x.AppointmentId).LastOrDefault();
+                    int id = res.AppointmentId;
+                    Appointment A = _repo.Get(id);
+                    return View(A);
+                }
+                else
+                {
+                    return RedirectToAction("Index");
+                }
+            }
+            catch (Exception e)
+            {
+                _logger.LogDebug(e.Message);
+            }
+            return RedirectToAction("Privacy", "Home");
+        }
+
 
         // GET: Appointments/Delete/5
         public async Task<IActionResult> Delete(int? id)

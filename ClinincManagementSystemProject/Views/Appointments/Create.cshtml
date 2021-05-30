@@ -21,14 +21,15 @@
 
             <div class="form-group">
                 <label asp-for="SpecializationRequired" class="control-label"></label>
-                <select class="form-control" id="Specialization" name="Specialization">
-                    <option>General</option>
-                    <option>Gynaecologist</option>
-                    <option>Pediatrics</option>
-                    <option>Orthopedics</option>
-                    <option>Ophthalmology</option>
-                </select>
-                <span asp-validation-for="SpecializationRequired" class="text-danger"></span>
+                <input asp-for="SpecializationRequired" class="form-control" list="ddlSpecialization" />
+                <datalist id="ddlSpecialization">
+                    <option value="General">General</option>
+                    <option value="Gynaecologist">Gynaecologist</option>
+                    <option value="Pediatrics">Pediatrics</option>
+                    <option value="Orthopedics">Orthopedics</option>
+                    <option value="Ophthalmology">Ophthalmology</option>
+                </datalist>
+                    <span asp-validation-for="SpecializationRequired" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DoctorID" class="control-label"></label>
@@ -36,7 +37,9 @@
             </div>
             <div class="form-group">
                 <label asp-for="DoctorAvailability" class="control-label"></label>
-                <input asp-for="DoctorAvailability" class="form-control" />
+                <input checked="checked" id="DocAvl" name="DoctorAvailability" type="radio" value="Yes" />Yes
+
+                <input id="DocAvl" name="DoctorAvailability" type="radio" value="No" />No
                 <span asp-validation-for="DoctorAvailability" class="text-danger"></span>
             </div>
             <div class="form-group">

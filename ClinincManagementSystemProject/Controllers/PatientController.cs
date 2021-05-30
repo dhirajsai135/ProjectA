@@ -24,7 +24,8 @@ namespace ClinincManagementSystemProject.Controllers
         }
         public IActionResult Index()
         {
-            return View();
+            List<Patient> res= _repo.GetAll().ToList();
+            return View(res);
         }
 
         public IActionResult AddPatient()

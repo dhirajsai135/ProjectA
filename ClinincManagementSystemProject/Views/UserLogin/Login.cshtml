@@ -2,6 +2,8 @@
 
 @{
     ViewData["Title"] = null;
+    Layout = "~/Views/Shared/_ViewStart.cshtml";
+
 }
 
 <h1>Login</h1>
@@ -44,4 +46,6 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
-
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

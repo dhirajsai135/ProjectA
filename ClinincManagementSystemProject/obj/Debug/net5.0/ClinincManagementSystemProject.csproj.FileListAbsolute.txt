@@ -147,7 +147,6 @@ C:\Users\dhira\source\repos\ClinincManagementSystemProject\ClinincManagementSyst
 C:\Users\dhira\source\repos\ClinincManagementSystemProject\ClinincManagementSystemProject\obj\Debug\net5.0\Razor\Views\UserLogin\Register.cshtml.g.cs
 C:\Users\dhira\source\repos\ClinincManagementSystemProject\ClinincManagementSystemProject\obj\Debug\net5.0\Razor\Views\UserLogin\Login.cshtml.g.cs
 C:\Users\dhira\source\repos\ClinincManagementSystemProject\ClinincManagementSystemProject\obj\Debug\net5.0\Razor\Views\UserLogin\Index.cshtml.g.cs
-C:\Users\dhira\source\repos\ClinincManagementSystemProject\ClinincManagementSystemProject\obj\Debug\net5.0\Razor\Views\Patient\Index.cshtml.g.cs
 C:\Users\dhira\source\repos\ClinincManagementSystemProject\ClinincManagementSystemProject\obj\Debug\net5.0\Razor\Views\Patient\AddPatient.cshtml.g.cs
 C:\Users\dhira\source\repos\ClinincManagementSystemProject\ClinincManagementSystemProject\obj\Debug\net5.0\Razor\Views\Patient\DetailsOfPatient.cshtml.g.cs
 C:\Users\dhira\source\repos\ClinincManagementSystemProject\ClinincManagementSystemProject\obj\Debug\net5.0\Razor\Views\Patient\UpdatePatientDetails.cshtml.g.cs
@@ -171,3 +170,7 @@ C:\Users\dhira\source\repos\ClinincManagementSystemProject\ClinincManagementSyst
 C:\Users\dhira\source\repos\ClinincManagementSystemProject\ClinincManagementSystemProject\obj\Debug\net5.0\Razor\Views\Appointments\Details.cshtml.g.cs
 C:\Users\dhira\source\repos\ClinincManagementSystemProject\ClinincManagementSystemProject\obj\Debug\net5.0\Razor\Views\Appointments\Edit.cshtml.g.cs
 C:\Users\dhira\source\repos\ClinincManagementSystemProject\ClinincManagementSystemProject\obj\Debug\net5.0\Razor\Views\Appointments\Index.cshtml.g.cs
+C:\Users\dhira\source\repos\ClinincManagementSystemProject\ClinincManagementSystemProject\obj\Debug\net5.0\Razor\Views\Shared\_ViewStart.cshtml.g.cs
+C:\Users\dhira\source\repos\ClinincManagementSystemProject\ClinincManagementSystemProject\obj\Debug\net5.0\Razor\Views\UserLogin\Logout.cshtml.g.cs
+C:\Users\dhira\source\repos\ClinincManagementSystemProject\ClinincManagementSystemProject\obj\Debug\net5.0\Razor\Views\Patient\Index.cshtml.g.cs
+C:\Users\dhira\source\repos\ClinincManagementSystemProject\ClinincManagementSystemProject\obj\Debug\net5.0\Razor\Views\Appointments\DetailsOfAppointment.cshtml.g.cs
