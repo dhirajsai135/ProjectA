@@ -56,6 +56,13 @@ namespace ClinincManagementSystemProject.Controllers
         {
             ViewData["DoctorID"] = new SelectList(_context.Doctors, "DoctorId", "FirstName");
             ViewData["PatientID"] = new SelectList(_context.Patients, "PatientId", "FirstName");
+            //ViewBag.Name = (from r in _context.Doctors select r.Specialization).Distinct();
+            //var model = from r in _context.Doctors
+            //            orderby r.Specialization
+            //            where r.Specialization == specialization
+            //            select r;
+
+            //TempData["data"] = (from d in _context.Doctors select new {d.FirstName, d.AvailableFrom, d.AvailableTo }).ToList();
             return View();
         }
 
@@ -74,6 +81,7 @@ namespace ClinincManagementSystemProject.Controllers
             }
             ViewData["DoctorID"] = new SelectList(_context.Doctors, "DoctorId", "FirstName", appointment.DoctorID);
             ViewData["PatientID"] = new SelectList(_context.Patients, "PatientId", "FirstName", appointment.PatientID);
+
             return View(appointment);
         }
        

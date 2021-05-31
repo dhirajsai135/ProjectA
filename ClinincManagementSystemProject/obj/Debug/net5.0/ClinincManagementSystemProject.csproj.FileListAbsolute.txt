@@ -174,3 +174,5 @@ C:\Users\dhira\source\repos\ClinincManagementSystemProject\ClinincManagementSyst
 C:\Users\dhira\source\repos\ClinincManagementSystemProject\ClinincManagementSystemProject\obj\Debug\net5.0\Razor\Views\UserLogin\Logout.cshtml.g.cs
 C:\Users\dhira\source\repos\ClinincManagementSystemProject\ClinincManagementSystemProject\obj\Debug\net5.0\Razor\Views\Patient\Index.cshtml.g.cs
 C:\Users\dhira\source\repos\ClinincManagementSystemProject\ClinincManagementSystemProject\obj\Debug\net5.0\Razor\Views\Appointments\DetailsOfAppointment.cshtml.g.cs
+C:\Users\dhira\source\repos\ClinincManagementSystemProject\ClinincManagementSystemProject\obj\Debug\net5.0\Razor\Views\Doctor\View.cshtml.g.cs
+C:\Users\dhira\source\repos\ClinincManagementSystemProject\ClinincManagementSystemProject\obj\Debug\net5.0\Razor\Views\Shared\_IframeLayout.cshtml.g.cs

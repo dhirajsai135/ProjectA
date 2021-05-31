@@ -33,13 +33,13 @@ namespace ClinincManagementSystemProject.Models
 
         [Required]
         [DataType(DataType.Time)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:H:mm}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:H:mm tt}")]
         [Display(Name ="Available From")]
         public DateTime AvailableFrom { get; set; }
 
         [Required]
         [DataType(DataType.Time)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:H:mm}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:h:mm tt}")]
         [Display(Name = "Available To")]
         public DateTime AvailableTo { get; set; }
 

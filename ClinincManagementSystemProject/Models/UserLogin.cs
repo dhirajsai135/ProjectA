@@ -12,11 +12,13 @@ namespace ClinincManagementSystemProject.Models
         public int UserID { get; set; }
 
         [Required(AllowEmptyStrings = false, ErrorMessage ="Username is Required")]
+        [StringLength(10, ErrorMessage = "User name must be Six charter long.")]
         public string Username { get; set; }
 
 
         [Required(AllowEmptyStrings = false, ErrorMessage = "Password is Required")]
         [DataType(DataType.Password)]
+        [StringLength(6, ErrorMessage = "User name must be Six charter long.")]
         public string Password { get; set; }
 
 
@@ -29,8 +31,10 @@ namespace ClinincManagementSystemProject.Models
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
+
         [Required(AllowEmptyStrings = false, ErrorMessage = "Mobile Number is Required")]
         [Display(Name = "Mobile Number")]
+        [StringLength(10, ErrorMessage = "Phone number must be 10 digit.", MinimumLength = 10)]
         public string Mobile { get; set; }
     }
 }

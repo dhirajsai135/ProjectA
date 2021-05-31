@@ -22,14 +22,19 @@
             <div class="form-group">
                 <label asp-for="SpecializationRequired" class="control-label"></label>
                 <input asp-for="SpecializationRequired" class="form-control" list="ddlSpecialization" />
+                @*@using (Html.BeginForm())
+                {
+                    <text>Specialization Required</text>@Html.DropDownList("specilization", new SelectList(ViewBag.Name))
+                    <input type="submit" value="Search" />
+                }*@
                 <datalist id="ddlSpecialization">
-                    <option value="General">General</option>
-                    <option value="Gynaecologist">Gynaecologist</option>
-                    <option value="Pediatrics">Pediatrics</option>
-                    <option value="Orthopedics">Orthopedics</option>
-                    <option value="Ophthalmology">Ophthalmology</option>
-                </datalist>
-                    <span asp-validation-for="SpecializationRequired" class="text-danger"></span>
+            <option value="General">General</option>
+            <option value="Gynaecologist">Gynaecologist</option>
+            <option value="Pediatrics">Pediatrics</option>
+            <option value="Orthopedics">Orthopedics</option>
+            <option value="Ophthalmology">Ophthalmology</option>
+        </datalist>
+                <span asp-validation-for="SpecializationRequired" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DoctorID" class="control-label"></label>
@@ -51,15 +56,64 @@
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
+        <br />
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a class="btn btn-dark" asp-action="Index">Back to List</a>
 </div>
+
+
 <br />
 <br />
 <br />
+<div class="embed-responsive embed-responsive-16by9">
+    <iframe class="embed-responsive-item" src="http://localhost:2177/Doctor/View"></iframe>
+</div>
+
+
+
+
+@*<table>
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Doctor.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Doctor.AvailableFrom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Doctor.AvailableTo)
+            </th>
+
+    </thead>
+    <tbody>
+        @if (ViewData["DoctorAvail"] != null)
+        {
+            @foreach (var item in TempData["data"] as IEnumerable<ClinincManagementSystemProject.Models.Appointment>)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Doctor.FirstName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Doctor.AvailableFrom)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Doctor.AvailableTo)
+                    </td>
+                </tr>
+
+            }
+
+        }
+
+
+    </tbody>
+    </table>*@
+
 
 
 @section Scripts {

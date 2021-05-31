@@ -60,6 +60,7 @@ namespace ClinincManagementSystemProject.Controllers
         {
             if (_context.UserLogins.Where(x => x.Username == login.Username && x.Password == login.Password).FirstOrDefault() != null)
             {
+                ViewBag.Firstname = _context.UserLogins.Where(x => x.Username == login.Username).Select(x => x.FirstName);
                 return RedirectToAction("Welcome");
             }
             else

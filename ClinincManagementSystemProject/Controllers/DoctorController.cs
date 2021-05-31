@@ -74,11 +74,12 @@ namespace ClinincManagementSystemProject.Controllers
             return View(D);
         }
         [HttpPost]
-        public IActionResult UpdatePatientDetails(int id, Doctor D)
+        public IActionResult UpdateDoctorDetails(int id, Doctor D)
         {
             try
             {
                 _repo.Update(id, D);
+                return RedirectToAction("Index");
             }
             catch (Exception e)
             {
@@ -106,6 +107,15 @@ namespace ClinincManagementSystemProject.Controllers
                 _logger.LogDebug(e.Message);
             }
             return RedirectToAction("Index");
+        }
+        public IActionResult View(string spec)
+        {
+            ViewBag.Name = (from r in _context.Doctors select r.Specialization).Distinct();
+            var model = from r in _context.Doctors
+                        orderby r.Specialization
+                        where r.Specialization == spec
+                        select r;
+            return View(model);
         }
     }
 }

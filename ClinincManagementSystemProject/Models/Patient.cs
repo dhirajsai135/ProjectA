@@ -31,9 +31,9 @@ namespace ClinincManagementSystemProject.Models
         public int Age { get; set; }
 
 
+        [Display(Name = "Date of Birth")]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd-mm-yyyy}", ApplyFormatInEditMode = true)]
-        [Display(Name ="Date of Birth")]
+        [Required(AllowEmptyStrings = false, ErrorMessage = "Date of Birth is Required")]
         public DateTime DateOfBirth { get; set; }
 
         public IList<Appointment> Appointment { get; set; }

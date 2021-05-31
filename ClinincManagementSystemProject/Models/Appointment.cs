@@ -37,13 +37,9 @@ namespace ClinincManagementSystemProject.Models
 
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:dd-mm-yyyy}", ApplyFormatInEditMode = true)]
+        [Required(ErrorMessage = "Visit Date is Required")]
         [Display(Name = "Visit Date")]
         public DateTime VisitDate { get; set; }
-
-
-
-
 
     }
 }

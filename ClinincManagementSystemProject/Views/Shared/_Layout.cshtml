@@ -6,6 +6,11 @@
     <title>@ViewData["Title"] - Stone Clinic</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:600italic,400,800,700,300' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=BenchNine:300,400,700' rel='stylesheet' type='text/css'>
     <style>
         body {
             background-color: #FCDFFF;
@@ -14,12 +19,12 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-controller="UserLogin" asp-action="Welcome">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Stone-Clinic-Logo.png" height="70" alt="">
                 </a>
-                <a class="navbar-brand" asp-area="" asp-controller="Doctor" asp-action="Index">Stone Clinic</a>
+                <a class="navbar-brand text-white" asp-area="" asp-controller="Doctor" asp-action="Index">Stone Clinic</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -27,19 +32,19 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Doctor" asp-action="Index">View Doctor Details</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Doctor" asp-action="Index">Doctor Details</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Patient" asp-action="AddPatient">Add Patient Details</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Patient" asp-action="AddPatient">Add Patient</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Appointments" asp-action="Create">Add Appointment</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Appointments" asp-action="Create">Add Appointment</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Appointments" asp-action="Index">Cancel Appointment</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Appointments" asp-action="Index">Cancel Appointment</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="UserLogin" asp-action="Logout">Logout</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="UserLogin" asp-action="Logout">Logout</a>
                         </li>
                     </ul>
                 </div>

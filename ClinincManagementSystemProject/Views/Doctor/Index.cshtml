@@ -55,9 +55,9 @@
                 @Html.DisplayFor(modelItem => item.AvailableTo)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.DoctorId">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.DoctorId">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.DoctorId">Delete</a>
+                <a class="btn btn-primary" asp-action="UpdateDoctorDetails" asp-route-id="@item.DoctorId">Edit</a> |
+                <a class="btn btn-dark" asp-action="DetailsOfDoctor" asp-route-id="@item.DoctorId">Details</a> |
+                <a class="btn btn-danger" asp-action="DeleteDoctor" asp-route-id="@item.DoctorId">Delete</a>
             </td>
         </tr>
 }

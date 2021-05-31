@@ -1,13 +1,19 @@
-﻿@model IEnumerable<ClinincManagementSystemProject.Models.Patient>
+﻿@model IEnumerable<ClinincManagementSystemProject.Models.Doctor>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "View";
+    Layout = "~/Views/Shared/_IframeLayout.cshtml";
 }
 
-<h1>Index</h1>
-
+<h1>Doctor Information</h1>
 <p>
-    <a asp-action="Create">Create New</a>
+    @using (Html.BeginForm())
+    {
+        <text>Specialization Required</text>@Html.DropDownList("spec", new SelectList(ViewBag.Name))
+        <br/>
+        <br/>
+        <input class="btn btn-primary" type="submit" value="Search" />
+    }
 </p>
 <table class="table">
     <thead>
@@ -22,10 +28,13 @@
                 @Html.DisplayNameFor(model => model.Gender)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Age)
+                @Html.DisplayNameFor(model => model.Specialization)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DateOfBirth)
+                @Html.DisplayNameFor(model => model.AvailableFrom)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AvailableTo)
             </th>
             <th></th>
         </tr>
@@ -43,15 +52,13 @@
                 @Html.DisplayFor(modelItem => item.Gender)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Age)
+                @Html.DisplayFor(modelItem => item.Specialization)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.DateOfBirth)
+                @Html.DisplayFor(modelItem => item.AvailableFrom)
             </td>
             <td>
-                <a class="btn btn-primary" asp-action="UpdatePatientDetails" asp-route-id="@item.PatientId">Edit</a> |
-                <a class="btn btn-dark" asp-action="DetailsOfPatient" asp-route-id="@item.PatientId">Details</a> |
-                <a class="btn btn-danger" asp-action="DeletePatient" asp-route-id="@item.PatientId">Delete</a>
+                @Html.DisplayFor(modelItem => item.AvailableTo)
             </td>
         </tr>
 }
