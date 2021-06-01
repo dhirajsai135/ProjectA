@@ -32,7 +32,8 @@ namespace ClinincManagementSystemProject.Models
         public Patient Patient { get; set; }
 
 
-        [Required]
+        [Required(ErrorMessage = "Doctor Availability Should be Updated")]
+        [Display(Name = "Doctor Availability")]
         public String DoctorAvailability { get; set; }
 
 
@@ -40,6 +41,12 @@ namespace ClinincManagementSystemProject.Models
         [Required(ErrorMessage = "Visit Date is Required")]
         [Display(Name = "Visit Date")]
         public DateTime VisitDate { get; set; }
+
+        [Required]
+        [DataType(DataType.Time)]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:h:mm tt}")]
+        [Display(Name = "Visit Time")]
+        public DateTime VisitTime { get; set; }
 
     }
 }

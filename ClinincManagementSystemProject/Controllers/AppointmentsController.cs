@@ -71,7 +71,7 @@ namespace ClinincManagementSystemProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("AppointmentId,DoctorID,SpecializationRequired,PatientID,DoctorAvailability,VisitDate")] Appointment appointment)
+        public async Task<IActionResult> Create([Bind("AppointmentId,DoctorID,SpecializationRequired,PatientID,DoctorAvailability,VisitDate,VisitTime")] Appointment appointment)
         {
             if (ModelState.IsValid)
             {
@@ -108,7 +108,7 @@ namespace ClinincManagementSystemProject.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("AppointmentId,DoctorID,SpecializationRequired,PatientID,DoctorAvailability,VisitDate")] Appointment appointment)
+        public async Task<IActionResult> Edit(int id, [Bind("AppointmentId,DoctorID,SpecializationRequired,PatientID,DoctorAvailability,VisitDate,VisitTime")] Appointment appointment)
         {
             if (id != appointment.AppointmentId)
             {
@@ -199,6 +199,11 @@ namespace ClinincManagementSystemProject.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+        public async Task<IActionResult> DeleteView()
+        {
+            var clinicContext = _context.Appointments.Include(a => a.Doctor).Include(a => a.Patient);
+            return View(await clinicContext.ToListAsync());
+        }
         private bool AppointmentExists(int id)
         {
             return _context.Appointments.Any(e => e.AppointmentId == id);

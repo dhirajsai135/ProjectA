@@ -13,13 +13,13 @@
     <link href='http://fonts.googleapis.com/css?family=BenchNine:300,400,700' rel='stylesheet' type='text/css'>
     <style>
         body {
-            background-color: #FCDFFF;
+            background-color: azure;
         }
     </style>
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-dark border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-primary border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-controller="UserLogin" asp-action="Welcome">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a1/Stone-Clinic-Logo.png" height="70" alt="">
@@ -41,7 +41,7 @@
                             <a class="nav-link text-white" asp-area="" asp-controller="Appointments" asp-action="Create">Add Appointment</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" asp-area="" asp-controller="Appointments" asp-action="Index">Cancel Appointment</a>
+                            <a class="nav-link text-white" asp-area="" asp-controller="Appointments" asp-action="DeleteView">Cancel Appointment</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" asp-area="" asp-controller="UserLogin" asp-action="Logout">Logout</a>
@@ -57,9 +57,9 @@
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - Stone Clinic - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class="border-top footer text-muted  bg-primary">
+        <div class="container text-center">
+            <strong>&copy; 2021 - Stone Clinic -</strong><a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>

@@ -5,14 +5,12 @@
     Layout = "~/Views/Shared/_IframeLayout.cshtml";
 }
 
-<h1>Doctor Information</h1>
+<h2>Doctor Information</h2>
 <p>
     @using (Html.BeginForm())
     {
-        <text>Specialization Required</text>@Html.DropDownList("spec", new SelectList(ViewBag.Name))
-        <br/>
-        <br/>
-        <input class="btn btn-primary" type="submit" value="Search" />
+        <text>Specialization Required &nbsp; &nbsp;</text>@Html.DropDownList("spec", new SelectList(ViewBag.Name))
+        <input class="btn btn-primary ml-3" type="submit" value="Search" />
     }
 </p>
 <table class="table">
